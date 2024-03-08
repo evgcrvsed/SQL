@@ -13,7 +13,7 @@ def clear():
 # Создать таблицу "События" с полями: Название, Дата, Описание.
 
 
-class DB:
+class DataBase:
     def __init__(self, patch: str):
         self._patch = patch
 
@@ -38,7 +38,7 @@ class DB:
             return con.cursor()
 
 
-db = DB('events.db')
+db = DataBase('events.db')
 db.create_table()
 
 while True:
@@ -66,4 +66,3 @@ while True:
             print(f'{Fore.YELLOW}Таблица успешно пересоздана!{Fore.RESET}')
             time.sleep(1)
 
-# db.drop_table()
